@@ -28,6 +28,7 @@ class Main {
     else {
       System.out.println("I'm sorry you are now ineligable to apply");
     }
+    
 
   }
 }
