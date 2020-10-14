@@ -27,6 +27,7 @@ class Main {
     scan = new Scanner(System.in);
     System.out.println("Where did you go to high school?");
     String school = scan.next();
+    //Finding out the user's GPA
     scan = new Scanner(System.in);
     System.out.println("What is your current GPA?");
     double GPA = scan.nextDouble();
@@ -37,9 +38,11 @@ class Main {
       System.out.println("I'm sorry you are now ineligable to apply");
       System.exit(2);
     }
+    //Finding out if the applicant has been suspended or expelled.
     scan = new Scanner(System.in);
     System.out.println("Have you been suspended or expelled from high school?");
     String Behavior = scan.next();
+    //Finding out how many suspensions
     scan = new Scanner(System.in);
     System.out.println("How many times have you been suspended?");
     int Suspensions = scan.nextInt();
@@ -55,6 +58,7 @@ class Main {
       System.out.println("Congrats on making it this far, one more question.");
     }
     System.out.println("Please answer the next question with a number only.");
+    //finding out how many expulsions
     scan = new Scanner(System.in);
     System.out.println("How many times have you been expelled?");
     int Expulsions = scan.nextInt();
