@@ -1,4 +1,6 @@
 import java.util.Scanner;
+
+import javax.lang.model.util.ElementScanner6;
 class Main {
   public static void main(String[] args) {
     //Gaining user's name
@@ -8,13 +10,19 @@ class Main {
     //Gaining User's age and determining eligibility based on age
     scan = new Scanner(System.in);
     System.out.println("How old are you?");
-    int num = scan.nextInt();
-    if (num >= 18) {
+    int applicantsAge = scan.nextInt();
+    if (applicantsAge >= 18) {
     System.out.println("You are eligable to apply");
     }
     else {
     System.out.println("You are youger than 18. You are ineligable to apply");
+    while (applicantsAge < 18){
+      System.out.println("Ages one through seventeen are ineligable to apply");
+      break;
     }
+    System.exit(1); 
+    }
+  
     //Finding out the user's School
     scan = new Scanner(System.in);
     System.out.println("Where did you go to high school?");
@@ -27,8 +35,29 @@ class Main {
     }
     else {
       System.out.println("I'm sorry you are now ineligable to apply");
+      System.exit(2);
     }
-    
+    scan = new Scanner(System.in);
+    System.out.println("Have you been suspended or expelled from high school?");
+    int Suspensions = scan.nextInt();
+    if (Suspensions > 2) {
+      System.out.println("I'm sorry you are no longer eligable to apply");
+      System.exit(3);
+    }
+    else {
+      System.out.println("Congrats on making it this far, one more question.");
+    }
+    System.out.print("Please answer the next question with a number only.");
+    scan = new Scanner(System.in);
+    System.out.println("How many times have you been expelled?");
+    int Expulsions = scan.nextInt();
+    if (Expulsions < 1) {
+      System.out.println("Congragulations! You have been accepted into our school!");
+    }
+    else {
+      System.out.println("I'm sorry you are no longer able to apply.");
+     System.exit(4);
+    }
 
   }
 }
