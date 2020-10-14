@@ -39,15 +39,22 @@ class Main {
     }
     scan = new Scanner(System.in);
     System.out.println("Have you been suspended or expelled from high school?");
+    String Behavior = scan.next();
+    scan = new Scanner(System.in);
+    System.out.println("How many times have you been suspended?");
     int Suspensions = scan.nextInt();
-    if (Suspensions > 2) {
+    if (Suspensions >= 2) {
       System.out.println("I'm sorry you are no longer eligable to apply");
+      while(Suspensions >= 2){
+        System.out.println("We do not accept students who have been suspended two or more times.");
+        break;
+      }
       System.exit(3);
     }
     else {
       System.out.println("Congrats on making it this far, one more question.");
     }
-    System.out.print("Please answer the next question with a number only.");
+    System.out.println("Please answer the next question with a number only.");
     scan = new Scanner(System.in);
     System.out.println("How many times have you been expelled?");
     int Expulsions = scan.nextInt();
@@ -56,6 +63,10 @@ class Main {
     }
     else {
       System.out.println("I'm sorry you are no longer able to apply.");
+      while(Expulsions >= 1){
+      System.out.println("We do not accept students who have been expelled");
+      break;
+      }
      System.exit(4);
     }
 
